@@ -1,0 +1,161 @@
+From scottakirkwood at gmail.com  Thu Oct  7 23:16:11 2004
+From: scottakirkwood at gmail.com (Scott Kirkwood)
+Date: Thu, 7 Oct 2004 18:16:11 -0300
+Subject: [Xml2ddl-general] Welcome to the mailing list
+Message-ID: <b3dc5117041007141657b51c5b@mail.gmail.com>
+
+The purpose of this mailing list is for users and developers to keep
+up-to-date with what is going on with Xml2Ddl.
+It's also a forum for offering suggestions, making announcements or
+any other topic of interest.
+Eventually, if this list starts to become too busy I'll split it into
+other lists.
+
+At the moment it has been pretty quiet, I only received one e-mail
+(via another route).
+So I'm anxious to hear what you think.
+
+-Scott
+
+
+From scott_kirkwood at hotmail.com  Mon Oct 11 21:00:43 2004
+From: scott_kirkwood at hotmail.com (Scott Kirkwood)
+Date: Mon, 11 Oct 2004 17:00:43 -0200
+Subject: [Xml2ddl-general] FW: RE: xml2ddl
+Message-ID: <BAY9-F8S7hx27kBnccY0000a16b@hotmail.com>
+
+
+
+>From: Joshua Lynch To: Scott Kirkwood Subject: RE: xml2ddl
+>Date: Fri, 8 Oct 2004 08:55:15 -0700 (PDT)
+>
+>Scott,
+>
+>'First they ignore you...'
+>
+>Anyway there is some interest brewing.  I was directed to the freshmeat
+>post about xml2ddl from the mailing list for a Perl project called
+>SQLFairy.  That's a similar project to yours but their focus (at least
+>the original focus) was to translate ddl between different dbms's.
+>Don't tell them I said so but they are looking over xml2ddl for
+>interesting features to incorporate into SQLFairy.  I'm not a Perl guy
+>so I have trouble making sense of that project sometimes.  I'm not
+>really a Python programmer either but I can handle it much better than
+>Perl.
+>
+>I've fiddled around in the past with writing xml schema to describe
+>databases and I think yours is very good.  I especially like the
+>'dataset' feature.  I am curious if you have ever considered nesting
+>elements inside <column/> elements, for example something like this:
+>
+>  <column class="primaryKey">
+>    <constraint key="yes" unique="yes"/>
+>    <relation table="table" fk="id" />
+>    <index />
+>  </column>
+>
+>This way the xml author can keep the simple, one-column constraints,
+>relations and indexes close to the column definition.
+>
+>I was looking at what it would take to add minimal Oracle support
+>(mostly from a theoretical standpoint) and I wonder if you have plans
+>for segregating the dbms-specific code from the generic ddl-writing
+>code?  The simple approach is of course some kind of inheritance-based
+>template pattern with a generic base class that can write very bland
+>ddl and provides methods for subclasses to override to handle a
+>specific dbms.  In my experience this approach breaks down when the
+>subclasses need to depart from the 'template' provided by the base
+>class.
+>
+>Another approach might be to use configuration files to describe
+>dbms-specific ddl that you are coding directly into the 'params'
+>dictionary.  By itself that wouldn't handle things like the
+>MySQL-specific code in retColumnDefinition().  A more powerful method
+>for working with text templates might solve that problem (high level of
+>abstraction), or perhaps something like declarative rules (very high
+>level of abstraction).
+>
+>Josh
+>
+>
+>--- Scott Kirkwood <scott_kirkwood at hotmail.com> wrote:
+>
+> > Joshua,
+> > Actually, you're the first to respond since started the project.
+> > I was hoping to drum up more interrest, but I think people are going
+> > to wait
+> > and see.
+> > Also, many like yourself probably are using Oracle or some other $$
+> > DBMS,
+> > perhaps when I add Oracle support I'll see more traffic.
+> > -Scott
+> >
+> > >From: Joshua Lynch <joshualynch at yahoo.com>
+> > >To: Scott Kirkwood <scott_kirkwood at hotmail.com>
+> > >Subject: RE: xml2ddl
+> > >Date: Thu, 7 Oct 2004 13:11:43 -0700 (PDT)
+> > >
+> > >Err, freshmeat, I mean.  Thanks for the update on the mailing list.
+> > >
+> > >--- Scott Kirkwood <scott_kirkwood at hotmail.com> wrote:
+> > >
+> > > > Joshua,
+> > > >
+> > > > On slashdot? or on freshmeat?
+> > > > By coincidence I added a mailing list before I received your
+> > e-mail.
+> > > > It should be available by now.
+> > > >
+> > > > - Scott
+> > > >
+> > > > >From: Joshua Lynch <joshualynch at yahoo.com>
+> > > > >To: scott_kirkwood at hotmail.com
+> > > > >Subject: xml2ddl
+> > > > >Date: Thu, 7 Oct 2004 17:57:42 +0200 (CEST)
+> > > > >
+> > > > >I heard about xml2ddl on Slashdot today (are you getting a
+> > > > >lot of email that starts like this?) and I think it's a very
+> > > > >good piece of work.  I started right away converting a
+> > > > >3-year old Python script to your XML schema.  I use Oracle
+> > > > >right now but I thought I might be able to get away with
+> > > > >using a supported dbms since I'm not doing anything fancy.
+> > > > >
+> > > > >I tried the mailing list subscribe link on the BerliOS site
+> > > > >but there's no mailing list yet apparently.  Are there plans
+> > > > >to have a mailing list in the future?
+> > > > >
+> > > > >Thanks again for your great work.
+> > > > >
+> > > > >Josh Lynch
+> > > > >(in St. Paul, MN)
+> > > >
+> > > > _________________________________________________________________
+> > > > MSN Messenger: instale gr?tis e converse com seus amigos.
+> > > > http://messenger.msn.com.br
+> > > >
+> > > >
+> > >
+> > >
+> > >__________________________________________________
+> > >Do You Yahoo!?
+> > >Tired of spam?  Yahoo! Mail has the best spam protection around
+> > >http://mail.yahoo.com
+> >
+> > _________________________________________________________________
+> > MSN Messenger: instale gr?tis e converse com seus amigos.
+> > http://messenger.msn.com.br
+> >
+> >
+>
+>
+>__________________________________________________
+>Do You Yahoo!?
+>Tired of spam?  Yahoo! Mail has the best spam protection around
+>http://mail.yahoo.com
+
+_________________________________________________________________
+MSN Messenger: instale gr?tis e converse com seus amigos. 
+http://messenger.msn.com.br
+
+
+

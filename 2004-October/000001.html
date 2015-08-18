@@ -1,0 +1,192 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Xml2ddl-general] FW: RE: xml2ddl
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xml2ddl-general/2004-October/index.html" >
+   <LINK REL="made" HREF="mailto:xml2ddl-general%40lists.berlios.de?Subject=Re%3A%20%5BXml2ddl-general%5D%20FW%3A%20RE%3A%20xml2ddl&In-Reply-To=%3CBAY9-F8S7hx27kBnccY0000a16b%40hotmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000000.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Xml2ddl-general] FW: RE: xml2ddl</H1>
+    <B>Scott Kirkwood</B> 
+    <A HREF="mailto:xml2ddl-general%40lists.berlios.de?Subject=Re%3A%20%5BXml2ddl-general%5D%20FW%3A%20RE%3A%20xml2ddl&In-Reply-To=%3CBAY9-F8S7hx27kBnccY0000a16b%40hotmail.com%3E"
+       TITLE="[Xml2ddl-general] FW: RE: xml2ddl">scott_kirkwood at hotmail.com
+       </A><BR>
+    <I>Mon Oct 11 21:00:43 CEST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000000.html">[Xml2ddl-general] Welcome to the mailing list
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1">[ date ]</a>
+              <a href="thread.html#1">[ thread ]</a>
+              <a href="subject.html#1">[ subject ]</a>
+              <a href="author.html#1">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+
+&gt;<i>From: Joshua Lynch To: Scott Kirkwood Subject: RE: xml2ddl
+</I>&gt;<i>Date: Fri, 8 Oct 2004 08:55:15 -0700 (PDT)
+</I>&gt;<i>
+</I>&gt;<i>Scott,
+</I>&gt;<i>
+</I>&gt;<i>'First they ignore you...'
+</I>&gt;<i>
+</I>&gt;<i>Anyway there is some interest brewing.  I was directed to the freshmeat
+</I>&gt;<i>post about xml2ddl from the mailing list for a Perl project called
+</I>&gt;<i>SQLFairy.  That's a similar project to yours but their focus (at least
+</I>&gt;<i>the original focus) was to translate ddl between different dbms's.
+</I>&gt;<i>Don't tell them I said so but they are looking over xml2ddl for
+</I>&gt;<i>interesting features to incorporate into SQLFairy.  I'm not a Perl guy
+</I>&gt;<i>so I have trouble making sense of that project sometimes.  I'm not
+</I>&gt;<i>really a Python programmer either but I can handle it much better than
+</I>&gt;<i>Perl.
+</I>&gt;<i>
+</I>&gt;<i>I've fiddled around in the past with writing xml schema to describe
+</I>&gt;<i>databases and I think yours is very good.  I especially like the
+</I>&gt;<i>'dataset' feature.  I am curious if you have ever considered nesting
+</I>&gt;<i>elements inside &lt;column/&gt; elements, for example something like this:
+</I>&gt;<i>
+</I>&gt;<i>  &lt;column class=&quot;primaryKey&quot;&gt;
+</I>&gt;<i>    &lt;constraint key=&quot;yes&quot; unique=&quot;yes&quot;/&gt;
+</I>&gt;<i>    &lt;relation table=&quot;table&quot; fk=&quot;id&quot; /&gt;
+</I>&gt;<i>    &lt;index /&gt;
+</I>&gt;<i>  &lt;/column&gt;
+</I>&gt;<i>
+</I>&gt;<i>This way the xml author can keep the simple, one-column constraints,
+</I>&gt;<i>relations and indexes close to the column definition.
+</I>&gt;<i>
+</I>&gt;<i>I was looking at what it would take to add minimal Oracle support
+</I>&gt;<i>(mostly from a theoretical standpoint) and I wonder if you have plans
+</I>&gt;<i>for segregating the dbms-specific code from the generic ddl-writing
+</I>&gt;<i>code?  The simple approach is of course some kind of inheritance-based
+</I>&gt;<i>template pattern with a generic base class that can write very bland
+</I>&gt;<i>ddl and provides methods for subclasses to override to handle a
+</I>&gt;<i>specific dbms.  In my experience this approach breaks down when the
+</I>&gt;<i>subclasses need to depart from the 'template' provided by the base
+</I>&gt;<i>class.
+</I>&gt;<i>
+</I>&gt;<i>Another approach might be to use configuration files to describe
+</I>&gt;<i>dbms-specific ddl that you are coding directly into the 'params'
+</I>&gt;<i>dictionary.  By itself that wouldn't handle things like the
+</I>&gt;<i>MySQL-specific code in retColumnDefinition().  A more powerful method
+</I>&gt;<i>for working with text templates might solve that problem (high level of
+</I>&gt;<i>abstraction), or perhaps something like declarative rules (very high
+</I>&gt;<i>level of abstraction).
+</I>&gt;<i>
+</I>&gt;<i>Josh
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>--- Scott Kirkwood &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/xml2ddl-general">scott_kirkwood at hotmail.com</A>&gt; wrote:
+</I>&gt;<i>
+</I>&gt;<i> &gt; Joshua,
+</I>&gt;<i> &gt; Actually, you're the first to respond since started the project.
+</I>&gt;<i> &gt; I was hoping to drum up more interrest, but I think people are going
+</I>&gt;<i> &gt; to wait
+</I>&gt;<i> &gt; and see.
+</I>&gt;<i> &gt; Also, many like yourself probably are using Oracle or some other $$
+</I>&gt;<i> &gt; DBMS,
+</I>&gt;<i> &gt; perhaps when I add Oracle support I'll see more traffic.
+</I>&gt;<i> &gt; -Scott
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; &gt;From: Joshua Lynch &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/xml2ddl-general">joshualynch at yahoo.com</A>&gt;
+</I>&gt;<i> &gt; &gt;To: Scott Kirkwood &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/xml2ddl-general">scott_kirkwood at hotmail.com</A>&gt;
+</I>&gt;<i> &gt; &gt;Subject: RE: xml2ddl
+</I>&gt;<i> &gt; &gt;Date: Thu, 7 Oct 2004 13:11:43 -0700 (PDT)
+</I>&gt;<i> &gt; &gt;
+</I>&gt;<i> &gt; &gt;Err, freshmeat, I mean.  Thanks for the update on the mailing list.
+</I>&gt;<i> &gt; &gt;
+</I>&gt;<i> &gt; &gt;--- Scott Kirkwood &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/xml2ddl-general">scott_kirkwood at hotmail.com</A>&gt; wrote:
+</I>&gt;<i> &gt; &gt;
+</I>&gt;<i> &gt; &gt; &gt; Joshua,
+</I>&gt;<i> &gt; &gt; &gt;
+</I>&gt;<i> &gt; &gt; &gt; On slashdot? or on freshmeat?
+</I>&gt;<i> &gt; &gt; &gt; By coincidence I added a mailing list before I received your
+</I>&gt;<i> &gt; e-mail.
+</I>&gt;<i> &gt; &gt; &gt; It should be available by now.
+</I>&gt;<i> &gt; &gt; &gt;
+</I>&gt;<i> &gt; &gt; &gt; - Scott
+</I>&gt;<i> &gt; &gt; &gt;
+</I>&gt;<i> &gt; &gt; &gt; &gt;From: Joshua Lynch &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/xml2ddl-general">joshualynch at yahoo.com</A>&gt;
+</I>&gt;<i> &gt; &gt; &gt; &gt;To: <A HREF="https://lists.berlios.de/mailman/listinfo/xml2ddl-general">scott_kirkwood at hotmail.com</A>
+</I>&gt;<i> &gt; &gt; &gt; &gt;Subject: xml2ddl
+</I>&gt;<i> &gt; &gt; &gt; &gt;Date: Thu, 7 Oct 2004 17:57:42 +0200 (CEST)
+</I>&gt;<i> &gt; &gt; &gt; &gt;
+</I>&gt;<i> &gt; &gt; &gt; &gt;I heard about xml2ddl on Slashdot today (are you getting a
+</I>&gt;<i> &gt; &gt; &gt; &gt;lot of email that starts like this?) and I think it's a very
+</I>&gt;<i> &gt; &gt; &gt; &gt;good piece of work.  I started right away converting a
+</I>&gt;<i> &gt; &gt; &gt; &gt;3-year old Python script to your XML schema.  I use Oracle
+</I>&gt;<i> &gt; &gt; &gt; &gt;right now but I thought I might be able to get away with
+</I>&gt;<i> &gt; &gt; &gt; &gt;using a supported dbms since I'm not doing anything fancy.
+</I>&gt;<i> &gt; &gt; &gt; &gt;
+</I>&gt;<i> &gt; &gt; &gt; &gt;I tried the mailing list subscribe link on the BerliOS site
+</I>&gt;<i> &gt; &gt; &gt; &gt;but there's no mailing list yet apparently.  Are there plans
+</I>&gt;<i> &gt; &gt; &gt; &gt;to have a mailing list in the future?
+</I>&gt;<i> &gt; &gt; &gt; &gt;
+</I>&gt;<i> &gt; &gt; &gt; &gt;Thanks again for your great work.
+</I>&gt;<i> &gt; &gt; &gt; &gt;
+</I>&gt;<i> &gt; &gt; &gt; &gt;Josh Lynch
+</I>&gt;<i> &gt; &gt; &gt; &gt;(in St. Paul, MN)
+</I>&gt;<i> &gt; &gt; &gt;
+</I>&gt;<i> &gt; &gt; &gt; _________________________________________________________________
+</I>&gt;<i> &gt; &gt; &gt; MSN Messenger: instale gr&#225;tis e converse com seus amigos.
+</I>&gt;<i> &gt; &gt; &gt; <A HREF="http://messenger.msn.com.br">http://messenger.msn.com.br</A>
+</I>&gt;<i> &gt; &gt; &gt;
+</I>&gt;<i> &gt; &gt; &gt;
+</I>&gt;<i> &gt; &gt;
+</I>&gt;<i> &gt; &gt;
+</I>&gt;<i> &gt; &gt;__________________________________________________
+</I>&gt;<i> &gt; &gt;Do You Yahoo!?
+</I>&gt;<i> &gt; &gt;Tired of spam?  Yahoo! Mail has the best spam protection around
+</I>&gt;<i> &gt; &gt;<A HREF="http://mail.yahoo.com">http://mail.yahoo.com</A>
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; _________________________________________________________________
+</I>&gt;<i> &gt; MSN Messenger: instale gr&#225;tis e converse com seus amigos.
+</I>&gt;<i> &gt; <A HREF="http://messenger.msn.com.br">http://messenger.msn.com.br</A>
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>__________________________________________________
+</I>&gt;<i>Do You Yahoo!?
+</I>&gt;<i>Tired of spam?  Yahoo! Mail has the best spam protection around
+</I>&gt;<i><A HREF="http://mail.yahoo.com">http://mail.yahoo.com</A>
+</I>
+_________________________________________________________________
+MSN Messenger: instale gr&#225;tis e converse com seus amigos. 
+<A HREF="http://messenger.msn.com.br">http://messenger.msn.com.br</A>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000000.html">[Xml2ddl-general] Welcome to the mailing list
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1">[ date ]</a>
+              <a href="thread.html#1">[ thread ]</a>
+              <a href="subject.html#1">[ subject ]</a>
+              <a href="author.html#1">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xml2ddl-general">More information about the Xml2ddl-general
+mailing list</a><br>
+</body></html>
